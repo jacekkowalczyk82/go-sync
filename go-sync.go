@@ -221,4 +221,12 @@ func main() {
 	// 4. Execute the plan
 	if len(plan) > 0 {
 		if err := ExecutePlan(plan); err != nil {
-			fmt.Printf("\nSync execution FAILED: %v
+			fmt.Printf("\nSync execution FAILED: %v\n", err)
+		} else {
+			fmt.Println("\nSync execution COMPLETED successfully.")
+		}
+	} else {
+		fmt.Println("\nDirectories are already in sync. No actions to perform.")
+	}
+}
+
